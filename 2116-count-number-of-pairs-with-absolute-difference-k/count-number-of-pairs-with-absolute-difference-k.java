@@ -6,7 +6,9 @@ class Solution {
                 if (Math.abs(nums[i] - nums[j]) == k){
                     count++;
                 }
-                
+                //   if (Math.abs(nums[i] - nums[j]) == k) {
+                //     count++;
+                // }
                
             }
         }
