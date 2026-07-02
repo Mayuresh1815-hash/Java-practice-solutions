@@ -1,25 +1,29 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
 
-        int[] arr = new int[2];
+        int[] arr = {-1, -1};
 
-        int start = 0;
-        int end = nums.length - 1;
+        for (int i = 0; i < nums.length - 1; i++) {
 
-        while (start < end) {
+            int start = i + 1;
+            int end = nums.length - 1;
+            int find = target - nums[i];
 
-            int sum = nums[start] + nums[end];
+            while (start <= end) {
 
-            if (sum == target) {
-                arr[0] = start + 1;
-                arr[1] = end + 1;
-                return arr;
-            }
-            else if (sum < target) {
-                start++;
-            }
-            else {
-                end--;
+                int mid = (start + end) / 2;
+
+                if (nums[mid] == find) {
+                    arr[0] = i + 1;
+                    arr[1] = mid + 1;
+                    return arr;
+                }
+
+                if (nums[mid] < find) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
             }
         }
 
