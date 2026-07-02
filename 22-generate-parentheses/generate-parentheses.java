@@ -4,10 +4,11 @@ class Solution {
         generate(list, new StringBuilder(), 0, 0, n);
         return list;
     }
+
     private static void generate(ArrayList<String> list, StringBuilder up, int open, int close, int n) {
         if (open == n && close == n) {
             list.add(up.toString());
-            return ;
+            return;
         }
         if (open < n) {
             up.append('(');
