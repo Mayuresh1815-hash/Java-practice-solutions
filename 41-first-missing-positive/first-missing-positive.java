@@ -4,8 +4,8 @@ class Solution {
 
         int missing = 1;
 
-        for (int num : nums) {
-            if (num == missing) {
+        for (int i=0;i<nums.length;i++) {
+            if (nums[i] == missing) {
                 missing++;
             }
         }
